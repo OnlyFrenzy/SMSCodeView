@@ -313,125 +313,125 @@ open class SMSCodeView: UIView {
     
 //MARK: - setters
     @discardableResult
-    func setDelegate(_ delegate: SMSCodeViewDelegate) -> Self {
+    public func setDelegate(_ delegate: SMSCodeViewDelegate) -> Self {
         self.delegate = delegate
         return self
     }
     
     @discardableResult
-    func setViewsCount(_ viewsCount: Int) -> Self {
+    public func setViewsCount(_ viewsCount: Int) -> Self {
         self.quantityOfViews = viewsCount
         return self
     }
     
     @discardableResult
-    func setSpacingBetweenViews(_ spacing: CGFloat) -> Self {
+    public func setSpacingBetweenViews(_ spacing: CGFloat) -> Self {
         self.spacing = spacing
         return self
     }
     
     @discardableResult
-    func setInputViewsBackgroundColor(_ backgroundColor: UIColor?) -> Self {
+    public func setInputViewsBackgroundColor(_ backgroundColor: UIColor?) -> Self {
         self.inputViewsBackgroundColor = backgroundColor
         return self
     }
     
     @discardableResult
-    func setCornerRadius(_ cornerRadius: CGFloat) -> Self {
+    public func setCornerRadius(_ cornerRadius: CGFloat) -> Self {
         self.cornerRadius = cornerRadius
         return self
     }
     
     @discardableResult
-    func setBorderWidth(_ borderWidth: CGFloat) -> Self {
+    public func setBorderWidth(_ borderWidth: CGFloat) -> Self {
         self.borderWidth = borderWidth
         return self
     }
     
     @discardableResult
-    func setBorderColor(_ borderColor: UIColor?) -> Self {
+    public func setBorderColor(_ borderColor: UIColor?) -> Self {
         self.borderColor = borderColor
         return self
     }
     
     @discardableResult
-    func setFillBorderColor(_ borderColor: UIColor?) -> Self {
+    public func setFillBorderColor(_ borderColor: UIColor?) -> Self {
         self.fillBorderColor = borderColor
         return self
     }
     
     @discardableResult
-    func setErrorBorderColor(_ borderColor: UIColor?) -> Self {
+    public func setErrorBorderColor(_ borderColor: UIColor?) -> Self {
         self.errorBorderColor = borderColor
         return self
     }
     
     @discardableResult
-    func setEditingBorderColor(_ borderColor: UIColor?) -> Self {
+    public func setEditingBorderColor(_ borderColor: UIColor?) -> Self {
         self.editingBorderColor = borderColor
         return self
     }
     
     @discardableResult
-    func setTextColor(_ textColor: UIColor?) -> Self {
+    public func setTextColor(_ textColor: UIColor?) -> Self {
         self.textColor = textColor
         return self
     }
     
     @discardableResult
-    func setErrorTextColor(_ textColor: UIColor?) -> Self {
+    public func setErrorTextColor(_ textColor: UIColor?) -> Self {
         self.errorTextColor = textColor
         return self
     }
     
     @discardableResult
-    func setTextFont(_ textFont: UIFont?) -> Self {
+    public func setTextFont(_ textFont: UIFont?) -> Self {
         self.textFont = textFont
         return self
     }
     
     @discardableResult
-    func setCursorColor(_ cursorColor: UIColor?) -> Self {
+    public func setCursorColor(_ cursorColor: UIColor?) -> Self {
         self.cursorColor = cursorColor
         return self
     }
     
     @discardableResult
-    func setKeyboardType(_ keyboardType: UIKeyboardType) -> Self {
+    public  func setKeyboardType(_ keyboardType: UIKeyboardType) -> Self {
         self.keyboardType = keyboardType
         return self
     }
     
 // MARK: - actions
-    func changeBorderColorToError() {
+    public func changeBorderColorToError() {
         self.viewsArray.forEach { $0.layer.borderColor = self.errorBorderColor?.cgColor }
     }
     
-    func changeTextColorToError() {
+    public func changeTextColorToError() {
         self.viewsArray.forEach { $0.subviews.forEach { view in
             guard let label = view as? UILabel else { return }
             label.textColor = self.errorTextColor
         } }
     }
     
-    func changeInputViewsBackgroundColor(_ color: UIColor) {
+    public func changeInputViewsBackgroundColor(_ color: UIColor) {
         self.viewsArray.forEach { $0.backgroundColor = color }
     }
     
-    func changeTextColor(_ color: UIColor) {
+    public func changeTextColor(_ color: UIColor) {
         self.viewsArray.forEach { $0.subviews.forEach { view in
             guard let label = view as? UILabel else { return }
                 label.textColor = color
         } }
     }
     
-    func endEditing() {
+    public func endEditing() {
         self.inputTextField.resignFirstResponder()
         self.changeInputViewsBorderColorWhenClear()
         self.changeInputViewsBorderColorWhenFill()
     }
     
-    func changeTextValue(to text:String?) {
+    public func changeTextValue(to text:String?) {
         self.inputTextField.text = text
         self.inputTextFieldValueChanged()
     }
