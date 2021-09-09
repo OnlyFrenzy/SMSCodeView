@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SMSCodeViewDelegate: AnyObject {
+public protocol SMSCodeViewDelegate: AnyObject {
     func smsCodeValueChanged(value: String?)
     func smsCodeEndEditing(_ textField: UITextField)
     func smsCodeBeginEditing(_ textField: UITextField)

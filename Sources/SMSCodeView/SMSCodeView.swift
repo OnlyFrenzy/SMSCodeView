@@ -440,7 +440,7 @@ open class SMSCodeView: UIView {
 // MARK: - UITextFieldDelegate
 extension SMSCodeView: UITextFieldDelegate {
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if self.inputTextField.text?.count ?? 0 >= self.quantityOfViews {
             if range.length != 1 {
@@ -451,11 +451,11 @@ extension SMSCodeView: UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         self.delegate?.smsCodeEndEditing(textField)
     }
 
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
         self.delegate?.smsCodeBeginEditing(textField)
     }
 }
