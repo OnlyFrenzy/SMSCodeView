@@ -56,7 +56,7 @@ open class SMSCodeView: UIView {
     private(set) var errorTextColor: UIColor? = .black
     
 // MARK: - create
-    func create() {
+    public func create() {
 
         self.addSubview(self.inputTextField)
 
